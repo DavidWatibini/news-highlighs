@@ -1,4 +1,7 @@
 {% macro displayNewsHeadline(news_list) %}
+{% for newsSource in news_list %}
+<a href="/newsSource/{{newsSource.name}}">
+      {{ newsSource.title|truncate(10)}}</a>
 
-
+{% endfor %}
 {% endmacro %}
