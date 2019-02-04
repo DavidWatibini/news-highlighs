@@ -6,3 +6,13 @@ from app import app
 def index():
 
     return render_template('index.html')
+
+@app.route('/news-article')
+def index():
+
+    return render_template('news-article.html')
+
+@app.route('/news-source')
+def index():
+
+    return render_template('news-source.html')
