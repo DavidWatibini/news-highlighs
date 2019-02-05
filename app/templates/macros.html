@@ -1,9 +1,10 @@
 {% macro displayNewsList(news_list) %}
 
 {% for news in news_list %}
-<li><a href="{{news.url}}"><h1>{{ news.name}}</h1></a></li>
-<li>{{news.description}}</li>
-
+  <li><a href="{{news.url}}">
+      <h1>{{ news.name}}</h1>
+    </a></li>
+  <li>{{news.description}}</li>
 
 {% endfor %}
 

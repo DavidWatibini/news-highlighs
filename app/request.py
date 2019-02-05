@@ -42,10 +42,12 @@ def process_article_results(article_list):
         title = article_item.get('title')
         description = article_item.get('description')
         publishedAt = article_item.get('publishedAt')
+        url = article_item.get('url')
 
+        if urlToImage:
 
-        article_object = Article(source,urlToImage,author,title,description,publishedAt)
-        article_results.append(article_object)
+            article_object = Article(source,urlToImage,author,title,description,publishedAt,url)
+            article_results.append(article_object)
 
     return article_results
 
