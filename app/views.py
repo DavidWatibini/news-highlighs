@@ -1,7 +1,7 @@
 from flask import render_template
 from app import app
 
-from .request import get_news
+from .request import get_news,get_article
 
 @app.route('/general')
 def general():
@@ -10,14 +10,16 @@ def general():
 	'''
 	# Getting popular news
 	general_news = get_news('general')
-	title = 'Home Page - Get The latest News Online Across The World'
+	title = 'general-news Page - Get The latest News Online'
 	return render_template('general.html',title = title,general=general_news)
 
-# @app.route('/newsArticle')
-# def newsArticle():
-#
-#     return render_template('newsArticle.html')
-#
+@app.route('/')
+def index():
+
+    news_article = get_article('article')
+    title = 'Home Page - Get The latest News Online'
+    return render_template('index.html',title = title, article=news_article)
+
 # @app.route('/newsSource')
 # def newsSource():
 #

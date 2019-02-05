@@ -1,0 +1,17 @@
+{% extends 'base.html'%}
+
+{% block content %}
+
+<ul>
+  {% for item in article %}
+  <li><h1>{{ item.source.name }}</h1></li>
+  <li>{{ item.author}}</li>
+  <li>{{ item.title}}</li>
+  <li>{{ item.description}}</li>
+  <li>{{ item.publishedAt}}</li>
+
+
+  {% endfor %}
+</ul>
+
+{%endblock%}
