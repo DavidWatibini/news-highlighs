@@ -37,13 +37,14 @@ def process_article_results(article_list):
     for article_item in article_list:
 
         source = article_item.get('source')
+        urlToImage = article_item.get('urlToImage')
         author = article_item.get('author')
         title = article_item.get('title')
         description = article_item.get('description')
         publishedAt = article_item.get('publishedAt')
 
 
-        article_object = Article(source,author,title,description,publishedAt)
+        article_object = Article(source,urlToImage,author,title,description,publishedAt)
         article_results.append(article_object)
 
     return article_results
