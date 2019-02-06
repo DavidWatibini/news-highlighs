@@ -2,20 +2,29 @@
 {% extends 'base.html'%}
 
 {% block content %}
-<h2>TOP HEADLINES TODAY</h2>
+<br>
+<hr>
+<h2 style="font-family:verdana";>TOP HEADLINES TODAY</h2>
+<hr>
+<br>
 {% block styles%}
     {{ super() }}
     <link rel="stylesheet" href="{{url_for('static', filename='index.css')}}">
 {% endblock%}
 {% for item in article %}
 <div class="col-md-4">
-  <h2>{{ item.source.name }}</h2>
-  <h3>{{ item.title}}</h3>
-  <p> Article by {{ item.author}}</p>
-  <p>{{ item.publishedAt}}</p>
+  <h2 style="color:blue;">{{ item.source.name }}</h2>
+  <br>
+  <h3 style="style="font-family:serif";>{{ item.title}}</h3>
+  <br>
+  <p><em>Article by {{ item.author}}</em></p>
+  <p><em>Published on {{ item.publishedAt}}</em></p>
   <img src="{{ item.urlToImage }}" alt="{{ item.title }} urlToImage" class="img-responsive" height="auto" width="auto">
-  <p>{{ item.description}}</p>
-  <p><a href="{{item.url}}" target="_blank"><button>Read Article</button></a></p>
+  <br>
+  <p style="style="font-family:verdana"><b> ~{{ item.description}}</b></p>
+  <br>
+  <p><a href="{{item.url}}" target="_blank"><button type="button" class="btn btn-outline-dark">Read Article</button></a></p>
+
 </div>
 {% endfor %}
 
